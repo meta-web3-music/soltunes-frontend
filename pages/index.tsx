@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import Header from "../src/components/header";
+import { Button } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
   const [walletAddress, setWalletAddress] = useState(null);
@@ -40,12 +41,9 @@ const Home: NextPage = () => {
   };
 
   const renderNotConnectedContainer = () => (
-    <button
-      className="cta-button connect-wallet-button"
-      onClick={connectWallet}
-    >
+    <Button size="sm" onClick={connectWallet}>
       Connect to Wallet
-    </button>
+    </Button>
   );
 
   useEffect(() => {
