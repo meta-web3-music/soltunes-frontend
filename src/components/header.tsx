@@ -89,7 +89,7 @@ const Header = () => {
         </Box>
         <Spacer />
         {!walletAddress ? (
-          <Box>{renderNotConnectedContainer()}</Box>
+          <Box color="black">{renderNotConnectedContainer()}</Box>
         ) : (
           <Box>{walletAddress}</Box>
         )}
