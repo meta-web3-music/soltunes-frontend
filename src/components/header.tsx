@@ -11,7 +11,7 @@ import {
   VStack,
   Spacer,
 } from "@chakra-ui/react";
-import { MdLightMode, MdDarkMode } from "react-icons/md";
+import { MdLightMode, MdDarkMode, MdCircle } from "react-icons/md";
 
 const Header = () => {
   const { walletAddress, setWalletAddress } =
@@ -55,7 +55,11 @@ const Header = () => {
 
   const renderNotConnectedContainer = () => (
     <Button size="sm" onClick={connectWallet}>
-      Connect Wallet
+      <img
+        src="./solana-sol-logo.svg"
+        style={{ height: "1.5em", width: "1.5em", marginRight: "5px" }}
+      />
+      <span>Connect Wallet</span>
     </Button>
   );
 
@@ -83,7 +87,7 @@ const Header = () => {
         </Box>
         <Spacer />
         <Box>
-          <Button size="xs" color="black">
+          <Button size="sm" color="black">
             Ad Marketplace
           </Button>
         </Box>
@@ -91,7 +95,29 @@ const Header = () => {
         {!walletAddress ? (
           <Box color="black">{renderNotConnectedContainer()}</Box>
         ) : (
-          <Box>{walletAddress}</Box>
+          <Box
+            bg="gray.200"
+            color="black"
+            pr="2"
+            pl="1.5"
+            py="1"
+            borderRadius="full"
+            borderWidth="1px"
+            borderColor="gray.400"
+          >
+            <HStack>
+              <MdCircle
+                style={{
+                  color: "#39ff14",
+                  width: "1.5rem",
+                  height: "1.5rem",
+                }}
+              />
+              <span>
+                {walletAddress.slice(0, 4)}...{walletAddress.slice(-4)}
+              </span>
+            </HStack>
+          </Box>
         )}
         {/* <Box onClick={toggleColorMode}>
           {colorMode === "dark" ? <MdLightMode /> : <MdDarkMode />}
