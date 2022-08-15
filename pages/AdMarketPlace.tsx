@@ -1,17 +1,16 @@
-import type { NextPage } from "next";
 import { AddressProvider } from "../src/context/AddressContext";
 import Header from "../src/components/header";
-import HottestSongs from "../src/components/HottestSongs";
+import { Heading } from "@chakra-ui/react";
 
-const Home: NextPage = () => {
+const AdMarketPlace: React.FC = () => {
   return (
     <>
       <AddressProvider>
         <Header />
       </AddressProvider>
-      <HottestSongs />
+      <Heading>Ad Marketplace</Heading>
     </>
   );
 };
 
-export default Home;
+export default AdMarketPlace;

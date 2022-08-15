@@ -57,7 +57,7 @@ const Header = () => {
     <Button size="sm" onClick={connectWallet}>
       <img
         src="./solana-sol-logo.svg"
-        style={{ height: "1.5em", width: "1.5em", marginRight: "5px" }}
+        style={{ height: "1.25em", width: "1.25em", marginRight: "7px" }}
       />
       <span>Connect Wallet</span>
     </Button>
@@ -77,13 +77,12 @@ const Header = () => {
         alignItems="center"
         justifyContent="center"
         margin="auto"
-        py="3"
-        px="6"
+        p="1rem"
         flexDirection="row"
       >
         <Box>
           <Heading as="h1">SOLTUNES</Heading>
-          <Text fontSize="lg">Stream Music, Advertise</Text>
+          <Text fontSize="lg">Stream Music, Support Artists</Text>
         </Box>
         <Spacer />
         <Box>
